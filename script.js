@@ -53,19 +53,6 @@ filterButtons.forEach(button => {
   });
 });
 
-// Publication search
-const publicationSearch = document.getElementById('publication-search');
-const publications = document.querySelectorAll('.publication-card');
-if (publicationSearch) {
-  publicationSearch.addEventListener('input', () => {
-    const query = publicationSearch.value.trim().toLowerCase();
-    publications.forEach(pub => {
-      const haystack = (pub.dataset.search + ' ' + pub.textContent).toLowerCase();
-      pub.classList.toggle('hidden', query && !haystack.includes(query));
-    });
-  });
-}
-
 // Copy citation buttons
 const citationButtons = document.querySelectorAll('.copy-citation');
 citationButtons.forEach(button => {
